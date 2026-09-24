@@ -588,6 +588,18 @@ img{max-width:100%}
 .fxec-feature img,.fxec-slide-image{align-self:stretch}
 .fxec-gallery img:first-child{height:auto}
 .fxec-cover-image,.fxec-feature,.fxec-slide-image{overflow:hidden}
+
+/* FEATURE STORY PHOTO — STRICT 4:5 */
+.fxec-feature{align-items:start}
+.fxec-feature img{
+  width:100% !important;
+  height:auto !important;
+  aspect-ratio:4 / 5 !important;
+  min-height:0 !important;
+  max-height:none !important;
+  object-fit:cover !important;
+  align-self:start !important;
+}
 </style>
 
 
