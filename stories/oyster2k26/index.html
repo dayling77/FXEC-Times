@@ -1,0 +1,1257 @@
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Playfair+Display:wght@500;600;700;800&display=swap');
+
+*{box-sizing:border-box}
+
+body{
+  margin:0;
+  background:#e7e3db;
+  color:#101826;
+  font-family:"DM Sans",Arial,sans-serif;
+}
+
+.fxec-times{
+  max-width:1180px;
+  margin:auto;
+  background:#f7f4ed;
+  min-height:100vh;
+  box-shadow:0 0 60px rgba(0,0,0,.18);
+}
+
+.fxec-gold-line{
+  height:7px;
+  background:#cda75d;
+}
+
+/* HEADER */
+
+.fxec-header{
+  padding:24px 48px 16px;
+  border-bottom:1px solid #d9d4ca;
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-end;
+}
+
+.fxec-brand{
+  font-family:"Playfair Display",serif;
+  font-size:28px;
+  font-weight:800;
+}
+
+.fxec-brand span{
+  color:#092b55;
+}
+
+.fxec-issue{
+  text-align:right;
+  font-size:11px;
+  letter-spacing:2px;
+  line-height:1.7;
+  color:#697382;
+}
+
+/* NAVIGATION */
+
+.fxec-nav{
+  display:flex;
+  gap:25px;
+  padding:13px 48px;
+  border-bottom:1px solid #d9d4ca;
+  font-size:11px;
+  font-weight:700;
+  text-transform:uppercase;
+  letter-spacing:1.4px;
+  position:sticky;
+  top:0;
+  z-index:20;
+  background:rgba(247,244,237,.96);
+}
+
+.fxec-nav a{
+  color:#101826;
+  text-decoration:none;
+}
+
+/* COVER */
+
+.fxec-cover{
+  padding:55px 48px;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:45px;
+  align-items:center;
+}
+
+.fxec-overline{
+  font-size:12px;
+  letter-spacing:3px;
+  text-transform:uppercase;
+  font-weight:700;
+  color:#c49a4f;
+  margin-bottom:18px;
+}
+
+.fxec-cover h1{
+  font-family:"Playfair Display",serif;
+  font-size:clamp(55px,8vw,100px);
+  line-height:.82;
+  letter-spacing:-4px;
+  color:#092b55;
+  margin:0;
+}
+
+.fxec-dek{
+  font-size:18px;
+  line-height:1.6;
+  color:#596372;
+  margin:28px 0;
+}
+
+.fxec-byline{
+  border-top:1px solid #d9d4ca;
+  padding-top:14px;
+  display:flex;
+  justify-content:space-between;
+  gap:15px;
+  font-size:10px;
+  text-transform:uppercase;
+  letter-spacing:1px;
+  font-weight:700;
+}
+
+.fxec-cover-image{
+  position:relative;
+}
+
+.fxec-cover-image img{
+  width:100%;
+  aspect-ratio:4/5;
+  object-fit:cover;
+  display:block;
+}
+
+.fxec-cover-label{
+  position:absolute;
+  bottom:18px;
+  left:18px;
+  background:#092b55;
+  color:white;
+  padding:11px 15px;
+  font-size:10px;
+  letter-spacing:2px;
+  text-transform:uppercase;
+}
+
+/* SECTION TITLES */
+
+.fxec-section-title{
+  margin:0 48px 25px;
+  display:flex;
+  align-items:center;
+  gap:16px;
+}
+
+.fxec-section-title:after{
+  content:"";
+  height:1px;
+  background:#d9d4ca;
+  flex:1;
+}
+
+.fxec-section-title h2{
+  font-family:"Playfair Display",serif;
+  font-size:30px;
+  color:#092b55;
+  margin:0;
+}
+
+/* CONTENTS */
+
+.fxec-contents{
+  margin:0 48px 55px;
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  border:1px solid #d9d4ca;
+}
+
+.fxec-content-box{
+  padding:25px;
+  border-right:1px solid #d9d4ca;
+}
+
+.fxec-content-box:last-child{
+  border-right:0;
+}
+
+.fxec-number{
+  font-size:10px;
+  letter-spacing:2px;
+  color:#c49a4f;
+  font-weight:700;
+}
+
+.fxec-content-box h3{
+  font-family:"Playfair Display",serif;
+  font-size:22px;
+  color:#092b55;
+  margin:8px 0;
+}
+
+.fxec-content-box p{
+  font-size:13px;
+  line-height:1.6;
+  color:#697382;
+  margin:0;
+}
+
+/* FEATURE */
+
+.fxec-feature{
+  margin:0 48px 60px;
+  display:grid;
+  grid-template-columns:1.2fr .8fr;
+  background:#092b55;
+  color:white;
+}
+
+.fxec-feature img{
+  width:100%;
+  height:100%;
+  min-height:420px;
+  object-fit:cover;
+}
+
+.fxec-feature-text{
+  padding:45px 38px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+}
+
+.fxec-feature-text .kicker{
+  color:#e1bd76;
+  font-size:11px;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  font-weight:700;
+}
+
+.fxec-feature-text h2{
+  font-family:"Playfair Display",serif;
+  font-size:43px;
+  line-height:1.05;
+  margin:12px 0 18px;
+}
+
+.fxec-feature-text p{
+  color:#d9e2ec;
+  line-height:1.7;
+  font-size:14px;
+}
+
+.fxec-pills{
+  display:flex;
+  flex-wrap:wrap;
+  gap:7px;
+  margin-top:15px;
+}
+
+.fxec-pill{
+  border:1px solid rgba(255,255,255,.35);
+  padding:8px 10px;
+  font-size:9px;
+  letter-spacing:1px;
+  text-transform:uppercase;
+}
+
+/* CAROUSEL */
+
+.fxec-carousel-section{
+  padding:0 48px 55px;
+}
+
+.fxec-carousel{
+  overflow:hidden;
+  background:white;
+  border:1px solid #d9d4ca;
+}
+
+.fxec-track{
+  display:flex;
+  transition:transform .65s cubic-bezier(.2,.8,.2,1);
+}
+
+.fxec-slide{
+  min-width:100%;
+  display:grid;
+  grid-template-columns:1.25fr .75fr;
+  min-height:480px;
+}
+
+.fxec-slide-image{
+  width:100%;
+  height:100%;
+  min-height:480px;
+  object-fit:cover;
+  display:block;
+}
+
+.fxec-slide-text{
+  padding:45px 40px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+}
+
+.fxec-kicker{
+  color:#c49a4f;
+  font-size:10px;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  font-weight:700;
+}
+
+.fxec-slide-text h2{
+  font-family:"Playfair Display",serif;
+  color:#092b55;
+  font-size:40px;
+  line-height:1.05;
+  margin:12px 0 18px;
+}
+
+.fxec-slide-text p{
+  color:#596372;
+  font-size:14px;
+  line-height:1.7;
+}
+
+.fxec-meta{
+  margin-top:25px;
+  padding-top:14px;
+  border-top:1px solid #d9d4ca;
+  font-size:9px;
+  letter-spacing:1px;
+  color:#7b8490;
+  font-weight:700;
+  text-transform:uppercase;
+}
+
+/* CONTROLS */
+
+.fxec-controls{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  margin-top:14px;
+}
+
+.fxec-buttons{
+  display:flex;
+  gap:8px;
+}
+
+.fxec-button{
+  border:1px solid #bdb7ac;
+  background:#f7f4ed;
+  padding:10px 15px;
+  cursor:pointer;
+  font-weight:700;
+  font-family:inherit;
+}
+
+.fxec-counter{
+  color:#697382;
+  font-size:10px;
+  letter-spacing:2px;
+}
+
+.fxec-play{
+  border:1px solid #bdb7ac;
+  background:#f7f4ed;
+  padding:10px 14px;
+  cursor:pointer;
+  font-weight:700;
+}
+
+/* GALLERY */
+
+.fxec-gallery{
+  padding:0 48px 60px;
+  display:grid;
+  grid-template-columns:2fr 1fr 1fr;
+  gap:12px;
+}
+
+.fxec-gallery img{
+  width:100%;
+  height:230px;
+  object-fit:cover;
+  display:block;
+}
+
+.fxec-gallery img:first-child{
+  grid-row:span 2;
+  height:472px;
+}
+
+/* QUOTE */
+
+.fxec-quote{
+  margin:0 48px 60px;
+  padding:38px 12%;
+  border-top:1px solid #d9d4ca;
+  border-bottom:1px solid #d9d4ca;
+  text-align:center;
+}
+
+.fxec-quote p{
+  font-family:"Playfair Display",serif;
+  font-size:32px;
+  line-height:1.3;
+  color:#092b55;
+  margin:0;
+}
+
+.fxec-quote small{
+  display:block;
+  margin-top:16px;
+  color:#c49a4f;
+  font-size:9px;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  font-weight:700;
+}
+
+/* FOOTER */
+
+.fxec-footer{
+  background:#092b55;
+  color:#d9e2ec;
+  padding:30px 48px;
+  display:flex;
+  justify-content:space-between;
+  gap:20px;
+  font-size:10px;
+  letter-spacing:1px;
+  text-transform:uppercase;
+}
+
+/* MOBILE */
+
+@media(max-width:800px){
+
+  .fxec-header{
+    padding:20px;
+  }
+
+  .fxec-issue{
+    display:none;
+  }
+
+  .fxec-nav{
+    padding:12px 20px;
+    overflow-x:auto;
+    white-space:nowrap;
+  }
+
+  .fxec-cover{
+    grid-template-columns:1fr;
+    padding:35px 20px;
+  }
+
+  .fxec-cover h1{
+    font-size:65px;
+  }
+
+  .fxec-contents{
+    margin-left:20px;
+    margin-right:20px;
+    grid-template-columns:1fr;
+  }
+
+  .fxec-content-box{
+    border-right:0;
+    border-bottom:1px solid #d9d4ca;
+  }
+
+  .fxec-feature{
+    margin-left:20px;
+    margin-right:20px;
+    grid-template-columns:1fr;
+  }
+
+  .fxec-feature img{
+    min-height:300px;
+  }
+
+  .fxec-section-title{
+    margin-left:20px;
+    margin-right:20px;
+  }
+
+  .fxec-carousel-section{
+    padding-left:20px;
+    padding-right:20px;
+  }
+
+  .fxec-slide{
+    grid-template-columns:1fr;
+  }
+
+  .fxec-slide-image{
+    min-height:320px;
+    height:320px;
+  }
+
+  .fxec-slide-text{
+    padding:28px 24px;
+  }
+
+  .fxec-slide-text h2{
+    font-size:33px;
+  }
+
+  .fxec-gallery{
+    padding-left:20px;
+    padding-right:20px;
+    grid-template-columns:1fr 1fr;
+  }
+
+  .fxec-gallery img,
+  .fxec-gallery img:first-child{
+    height:180px;
+    grid-row:auto;
+  }
+
+  .fxec-quote{
+    margin-left:20px;
+    margin-right:20px;
+    padding:30px 8%;
+  }
+
+  .fxec-quote p{
+    font-size:25px;
+  }
+
+  .fxec-footer{
+    padding:28px 20px;
+    flex-direction:column;
+  }
+}
+</style>
+
+
+<div class="fxec-times">
+
+<div class="fxec-gold-line"></div>
+
+<header class="fxec-header">
+
+<div class="fxec-brand">
+<span>FXEC</span> TIMES
+</div>
+
+<div class="fxec-issue">
+ISSUE 01 · SEPTEMBER 2026<br>
+MASTER OF BUSINESS ADMINISTRATION
+</div>
+
+</header>
+
+
+<nav class="fxec-nav">
+
+<a href="#cover">Cover Story</a>
+<a href="#inside">Inside</a>
+<a href="#feature">Feature</a>
+<a href="#stories">Photo Stories</a>
+<a href="#gallery">Gallery</a>
+
+</nav>
+
+
+<!-- COVER -->
+
+<section class="fxec-cover" id="cover">
+
+<div>
+
+<div class="fxec-overline">
+The MBA Journey · Issue 01
+</div>
+
+<h1>
+OYSTER<br>
+2K26
+</h1>
+
+<p class="fxec-dek">
+
+Where business minds stepped beyond the classroom —
+presenting ideas, competing with confidence and celebrating
+achievement at a national-level management fest.
+
+</p>
+
+<div class="fxec-byline">
+
+<span>FXEC · MBA</span>
+
+<span>
+Rohini College of Engineering & Technology
+</span>
+
+</div>
+
+</div>
+
+
+<div class="fxec-cover-image">
+
+<img src="1.jpg">
+
+<div class="fxec-cover-label">
+COVER STORY
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- CONTENTS -->
+
+<div class="fxec-section-title" id="inside">
+
+<h2>Inside This Issue</h2>
+
+</div>
+
+
+<section class="fxec-contents">
+
+<div class="fxec-content-box">
+
+<div class="fxec-number">01</div>
+
+<h3>The Experience</h3>
+
+<p>
+MBA students took their management learning beyond
+the classroom and into a national-level competitive
+environment.
+</p>
+
+</div>
+
+
+<div class="fxec-content-box">
+
+<div class="fxec-number">02</div>
+
+<h3>The Events</h3>
+
+<p>
+Paper Presentation, Business Plan, Ad-Zap, Business Quiz,
+Corporate Walk and Best Manager.
+</p>
+
+</div>
+
+
+<div class="fxec-content-box">
+
+<div class="fxec-number">03</div>
+
+<h3>The Achievers</h3>
+
+<p>
+Celebrating the students whose ideas, presentation and
+performance earned recognition.
+</p>
+
+</div>
+
+</section>
+
+
+
+<!-- FEATURE -->
+
+<section class="fxec-feature" id="feature">
+
+<img src="2.jpg">
+
+<div class="fxec-feature-text">
+
+<div class="kicker">
+FEATURE STORY
+</div>
+
+<h2>
+From Classroom to Competition
+</h2>
+
+<p>
+
+Management education becomes meaningful when students get
+opportunities to test their ideas in real situations.
+
+OYSTER 2K26 brought that experience to life through a range
+of events designed around creativity, communication, business
+thinking and performance.
+
+</p>
+
+<div class="fxec-pills">
+
+<span class="fxec-pill">Paper Presentation</span>
+<span class="fxec-pill">Business Plan</span>
+<span class="fxec-pill">Ad-Zap</span>
+<span class="fxec-pill">Business Quiz</span>
+<span class="fxec-pill">Corporate Walk</span>
+<span class="fxec-pill">Best Manager</span>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- PHOTO STORIES -->
+
+<div class="fxec-section-title" id="stories">
+
+<h2>Photo Stories</h2>
+
+</div>
+
+
+<section class="fxec-carousel-section">
+
+<div class="fxec-carousel" id="fxecCarousel">
+
+<div class="fxec-track" id="fxecTrack">
+
+
+<!-- STORY 1 -->
+
+<article class="fxec-slide">
+
+<img
+class="fxec-slide-image"
+src="1.jpg">
+
+<div class="fxec-slide-text">
+
+<div class="fxec-kicker">
+MBA · OYSTER 2K26
+</div>
+
+<h2>
+A Day of Ideas, Energy & Achievement
+</h2>
+
+<p>
+MBA students of Francis Xavier Engineering College made
+their presence felt at OYSTER 2K26, bringing creativity,
+business thinking and competitive spirit to the
+national-level management fest.
+</p>
+
+<div class="fxec-meta">
+FRANCIS XAVIER ENGINEERING COLLEGE
+</div>
+
+</div>
+
+</article>
+
+
+
+<!-- STORY 2 -->
+
+<article class="fxec-slide">
+
+<img
+class="fxec-slide-image"
+src="2.jpg">
+
+<div class="fxec-slide-text">
+
+<div class="fxec-kicker">
+MBA · OYSTER 2K26
+</div>
+
+<h2>
+The OYSTER 2K26 Experience
+</h2>
+
+<p>
+From paper presentations to business challenges,
+students stepped beyond the classroom and into an
+environment where ideas had to communicate, compete
+and create impact.
+</p>
+
+<div class="fxec-meta">
+ROHINI COLLEGE OF ENGINEERING & TECHNOLOGY
+</div>
+
+</div>
+
+</article>
+
+
+
+<!-- STORY 3 -->
+
+<article class="fxec-slide">
+
+<img
+class="fxec-slide-image"
+src="3.jpg">
+
+<div class="fxec-slide-text">
+
+<div class="fxec-kicker">
+MBA · OYSTER 2K26
+</div>
+
+<h2>
+Representing FXEC with Confidence
+</h2>
+
+<p>
+The event offered students an opportunity to present
+themselves, collaborate with peers and experience the
+energy of a national-level management platform.
+</p>
+
+<div class="fxec-meta">
+MBA STUDENT PARTICIPATION
+</div>
+
+</div>
+
+</article>
+
+
+
+<!-- STORY 4 -->
+
+<article class="fxec-slide">
+
+<img
+class="fxec-slide-image"
+src="4.jpg">
+
+<div class="fxec-slide-text">
+
+<div class="fxec-kicker">
+MBA · OYSTER 2K26
+</div>
+
+<h2>
+Many Events. One Spirit of Excellence.
+</h2>
+
+<p>
+Paper Presentation, Business Plan, Ad-Zap, Business
+Quiz, Corporate Walk and Best Manager brought out
+different dimensions of management talent.
+</p>
+
+<div class="fxec-meta">
+IDEAS · CREATIVITY · PERFORMANCE
+</div>
+
+</div>
+
+</article>
+
+
+
+<!-- STORY 5 -->
+
+<article class="fxec-slide">
+
+<img
+class="fxec-slide-image"
+src="5.jpg">
+
+<div class="fxec-slide-text">
+
+<div class="fxec-kicker">
+MBA · OYSTER 2K26
+</div>
+
+<h2>
+Celebrating Our Achievers
+</h2>
+
+<p>
+Certificates in hand, smiles on faces and memories to
+carry forward — the OYSTER 2K26 journey became a
+celebration of participation as much as achievement.
+</p>
+
+<div class="fxec-meta">
+CELEBRATING STUDENT ACHIEVEMENT
+</div>
+
+</div>
+
+</article>
+
+
+
+<!-- STORY 6 -->
+
+<article class="fxec-slide">
+
+<img
+class="fxec-slide-image"
+src="6.jpg">
+
+<div class="fxec-slide-text">
+
+<div class="fxec-kicker">
+MBA · OYSTER 2K26
+</div>
+
+<h2>
+Moments That Deserve a Spotlight
+</h2>
+
+<p>
+Every photograph tells a small part of the story:
+preparation, participation, teamwork, presentation
+and the pride of representing FXEC.
+</p>
+
+<div class="fxec-meta">
+MEMORIES FROM OYSTER 2K26
+</div>
+
+</div>
+
+</article>
+
+
+
+<!-- STORY 7 -->
+
+<article class="fxec-slide">
+
+<img
+class="fxec-slide-image"
+src="7.jpg">
+
+<div class="fxec-slide-text">
+
+<div class="fxec-kicker">
+MBA · OYSTER 2K26
+</div>
+
+<h2>
+Recognition for Ideas & Performance
+</h2>
+
+<p>
+The winners' moments captured at the event reflect the
+value of stepping forward, competing with confidence
+and turning classroom learning into experience.
+</p>
+
+<div class="fxec-meta">
+WINNERS · ACHIEVERS · MBA
+</div>
+
+</div>
+
+</article>
+
+
+
+<!-- STORY 8 -->
+
+<article class="fxec-slide">
+
+<img
+class="fxec-slide-image"
+src="8.jpg">
+
+<div class="fxec-slide-text">
+
+<div class="fxec-kicker">
+MBA · OYSTER 2K26
+</div>
+
+<h2>
+A Proud MBA Moment
+</h2>
+
+<p>
+For the MBA community at FXEC, OYSTER 2K26 is anotherchapter in a journey where business education meets
+experience, exposure and performance.
+</p>
+
+<div class="fxec-meta">
+POWERED BY PASSION · DRIVEN BY PERFORMANCE
+</div>
+
+</div>
+
+</article>
+
+
+</div>
+</div>
+
+
+<div class="fxec-controls">
+
+<div class="fxec-buttons">
+
+<button class="fxec-button" onclick="fxecPrevious()">
+← Previous
+</button>
+
+<button class="fxec-button" onclick="fxecNext()">
+Next →
+</button>
+
+</div>
+
+
+<div class="fxec-counter" id="fxecCounter">
+STORY 01 / 08
+</div>
+
+
+<button class="fxec-play" onclick="fxecPlay()" id="fxecPlay">
+▶ Auto Play
+</button>
+
+</div>
+
+</section>
+
+
+
+<!-- GALLERY -->
+
+<div class="fxec-section-title" id="gallery">
+
+<h2>The Gallery</h2>
+
+</div>
+
+
+<section class="fxec-gallery">
+
+<img src="3.jpg">
+
+<img src="4.jpg">
+
+<img src="5.jpg">
+
+<img src="6.jpg">
+
+<img src="7.jpg">
+
+</section>
+
+
+
+<!-- QUOTE -->
+
+<section class="fxec-quote">
+
+<p>
+“Ideas gain value when they are presented,
+challenged and transformed into experience.”
+</p>
+
+<small>
+FXEC MBA · Powered by Passion | Driven by Performance
+</small>
+
+</section>
+
+
+
+<footer class="fxec-footer">
+
+<span>
+Francis Xavier Engineering College
+</span>
+
+<span>
+Master of Business Administration
+</span>
+
+<span>
+OYSTER 2K26 · September 2026
+</span>
+
+</footer>
+
+</div>
+
+
+
+<script>
+
+var fxecIndex = 0;
+var fxecTimer = null;
+
+var fxecTrack =
+document.getElementById("fxecTrack");
+
+var fxecSlides =
+document.querySelectorAll(".fxec-slide");
+
+var fxecCounter =
+document.getElementById("fxecCounter");
+
+var fxecPlayButton =
+document.getElementById("fxecPlay");
+
+
+function fxecGo(n){
+
+fxecIndex =
+(n + fxecSlides.length) %
+fxecSlides.length;
+
+fxecTrack.style.transform =
+"translateX(-" +
+(fxecIndex * 100) +
+"%)";
+
+fxecCounter.innerHTML =
+"STORY " +
+String(fxecIndex + 1).padStart(2,"0") +
+" / " +
+String(fxecSlides.length).padStart(2,"0");
+
+}
+
+
+function fxecNext(){
+
+fxecGo(fxecIndex + 1);
+
+}
+
+
+function fxecPrevious(){
+
+fxecGo(fxecIndex - 1);
+
+}
+
+
+function fxecPlay(){
+
+if(fxecTimer){
+
+clearInterval(fxecTimer);
+
+fxecTimer = null;
+
+fxecPlayButton.innerHTML =
+"▶ Auto Play";
+
+}else{
+
+fxecTimer =
+setInterval(function(){
+
+fxecNext();
+
+},5000);
+
+fxecPlayButton.innerHTML =
+"❚❚ Pause";
+
+}
+
+}
+
+
+/* TOUCH SWIPE */
+
+var fxecStartX = 0;
+
+document
+.getElementById("fxecCarousel")
+.addEventListener(
+"touchstart",
+function(e){
+
+fxecStartX =
+e.touches[0].clientX;
+
+},
+{passive:true}
+);
+
+
+document
+.getElementById("fxecCarousel")
+.addEventListener(
+"touchend",
+function(e){
+
+var difference =
+e.changedTouches[0].clientX -
+fxecStartX;
+
+if(Math.abs(difference)>45){
+
+if(difference<0){
+
+fxecNext();
+
+}else{
+
+fxecPrevious();
+
+}
+
+}
+
+},
+{passive:true}
+);
+
+
+/* KEYBOARD */
+
+document.addEventListener(
+"keydown",
+function(e){
+
+if(e.key==="ArrowRight"){
+
+fxecNext();
+
+}
+
+if(e.key==="ArrowLeft"){
+
+fxecPrevious();
+
+}
+
+}
+);
+
+</script>
