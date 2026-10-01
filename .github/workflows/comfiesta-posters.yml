@@ -1,0 +1,48 @@
+name: Add Comfiesta-26 Posters
+
+on:
+  push:
+    branches: [main]
+
+permissions:
+  contents: write
+
+jobs:
+  download-posters:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Download poster images from Google Drive
+        shell: bash
+        run: |
+          set -e
+          mkdir -p mba/stories/comfiesta26/posters
+          download() {
+            id="$1"
+            out="$2"
+            curl -L --fail --retry 3 "https://drive.google.com/uc?export=download&id=$id" -o "$out"
+          }
+          download "10JTdZJOp6392zEbNieW95TYI2PZHBusT" "mba/stories/comfiesta26/posters/face-fiesta.webp"
+          download "1HQglOx6Dfq4e40jwpMypkO-go84-_E3D" "mba/stories/comfiesta26/posters/snap-saga.webp"
+          download "1KSQxrZPpBcbgQDCNPpCokQKojKj8oBUb" "mba/stories/comfiesta26/posters/dream-to-deal.webp"
+          download "1NxdQ1pOA0vhMcheCaHHB2CA8vuvrzpPi" "mba/stories/comfiesta26/posters/sell-and-spell.webp"
+          download "1cCj3uh-JSSyZToZB-os0RYydQE_1TGdo" "mba/stories/comfiesta26/posters/design-rush.webp"
+          download "1nhyR4RxcXxpN3wC2Sexup-3RhJrnugnJ" "mba/stories/comfiesta26/posters/fashionomics.webp"
+          download "1rHTSQMCBkl1kakuN282vjMTZngNfeoy6" "mba/stories/comfiesta26/posters/commerce-clash.webp"
+          download "1tn8oLwKwWf5WXbQ9lhjCjI_GS8EwD9K8" "mba/stories/comfiesta26/posters/header-winners.webp"
+          file mba/stories/comfiesta26/posters/*.webp
+
+      - name: Commit poster images
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add mba/stories/comfiesta26/posters/*.webp
+          if git diff --cached --quiet; then
+            echo "No poster changes."
+          else
+            git commit -m "Add Comfiesta-26 poster gallery [skip ci]"
+            git push
+          fi
