@@ -21,13 +21,18 @@ main{padding:50px 0 70px}
 h2{font-size:38px;line-height:1.05;margin:12px 0 18px}
 h3{font-size:24px;margin:35px 0 12px}
 p{font-size:17px;line-height:1.7;color:#555}
-.meta{font:13px Arial,sans-serif;line-height:1.8;color:#444;margin:22px 0}
 .highlight{border-left:4px solid #c9a227;background:#f8f6ef;padding:20px 24px;margin:28px 0}
 .highlight p{margin:0;font-size:18px;color:#333}
-.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:25px}
-.button{display:inline-block;background:#111;color:#fff;text-decoration:none;padding:13px 20px;font:12px Arial,sans-serif;font-weight:bold;letter-spacing:1px;text-transform:uppercase}
-.button.secondary{background:#9a7910}
-.preview{width:100%;max-height:560px;object-fit:contain;background:#eef2f5;margin:25px 0}
+.gallery{position:relative;margin:35px 0 15px;background:#eef2f5;overflow:hidden}
+.slides{display:flex;transition:transform .45s ease}
+.slide{min-width:100%;display:flex;justify-content:center;align-items:center;padding:18px}
+.slide img{width:100%;height:560px;object-fit:contain;display:block}
+.gallery button{position:absolute;top:50%;transform:translateY(-50%);width:44px;height:44px;border:0;border-radius:50%;background:rgba(17,17,17,.78);color:#fff;font-size:24px;cursor:pointer;z-index:2}
+.prev{left:15px}.next{right:15px}
+.dots{display:flex;justify-content:center;gap:8px;margin:15px 0 30px}
+.dot{width:9px;height:9px;border-radius:50%;background:#bbb;cursor:pointer}
+.dot.active{background:#9a7910}
+.caption{text-align:center;font:11px Arial,sans-serif;letter-spacing:1.5px;text-transform:uppercase;color:#777;margin-bottom:25px}
 .details{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:#ddd;margin-top:25px}
 .detail{background:#fff;padding:18px}
 .detail span{display:block;font:10px Arial,sans-serif;letter-spacing:1.5px;text-transform:uppercase;color:#888;margin-bottom:6px}
@@ -40,6 +45,9 @@ h2{font-size:30px}
 h3{font-size:22px}
 .top{font-size:9px}
 .details{grid-template-columns:1fr}
+.slide{padding:8px}
+.slide img{height:430px}
+.gallery button{width:38px;height:38px;font-size:20px}
 }
 </style>
 </head>
@@ -60,13 +68,9 @@ h3{font-size:22px}
 <div class="category">Sixth-Time National Recognition • IIC Star Rating</div>
 <h2>Francis Xavier Engineering College Earns 4-Star IIC Rating for the Sixth Time</h2>
 
-<p>
-<strong>Francis Xavier Engineering College (FXEC)</strong> has earned a <strong>4-Star Rating from the Institution's Innovation Council (IIC), Ministry of Education, Government of India, for the sixth time.</strong>
-</p>
+<p><strong>Francis Xavier Engineering College (FXEC)</strong> has earned a <strong>4-Star Rating from the Institution's Innovation Council (IIC), Ministry of Education, Government of India, for the sixth time.</strong></p>
 
-<p>
-The national recognition acknowledges the Institution's Innovation Council established at FXEC for undertaking activities prescribed by the <strong>Innovation Cell, Ministry of Education, Government of India</strong>, to promote innovation and start-up development on campus during the <strong>IIC Calendar Year 2024–25</strong>.
-</p>
+<p>The national recognition acknowledges the Institution's Innovation Council established at FXEC for undertaking activities prescribed by the <strong>Innovation Cell, Ministry of Education, Government of India</strong>, to promote innovation and start-up development on campus during the <strong>IIC Calendar Year 2024–25</strong>.</p>
 
 <div class="highlight">
 <p><strong>4-STAR RATING</strong><br>
@@ -75,17 +79,27 @@ A national recognition for activities undertaken to promote Innovation and Start
 
 <h3>Sustained Commitment to Innovation</h3>
 
-<p>
-This recognition reflects FXEC's continued efforts to create opportunities for students to <strong>ideate, innovate, develop solutions and explore entrepreneurship</strong>. Through innovation-focused activities and initiatives, the institution continues to encourage students to move from ideas to practical solutions with meaningful impact.
-</p>
+<p>This recognition reflects FXEC's continued efforts to create opportunities for students to <strong>ideate, innovate, develop solutions and explore entrepreneurship</strong>. Through innovation-focused activities and initiatives, the institution continues to encourage students to move from ideas to practical solutions with meaningful impact.</p>
 
-<p>
-The sixth-time recognition from the Institution's Innovation Council is a significant national acknowledgement of the institution's sustained participation in the innovation and start-up ecosystem promoted by the Ministry of Education.
-</p>
+<p>The sixth-time recognition from the Institution's Innovation Council is a significant national acknowledgement of the institution's sustained participation in the innovation and start-up ecosystem promoted by the Ministry of Education.</p>
 
-<img class="preview"
-src="https://drive.google.com/uc?export=view&id=1VmAElGz3aa56KiLTDi4vmaByFhEiqnNN"
-alt="Francis Xavier Engineering College sixth-time IIC 4-Star Rating national recognition">
+<div class="gallery" aria-label="IIC recognition slides">
+<div class="slides" id="slides">
+<div class="slide">
+<img src="https://drive.google.com/uc?export=view&id=1VmAElGz3aa56KiLTDi4vmaByFhEiqnNN" alt="FXEC sixth-time IIC 4-Star Rating recognition">
+</div>
+<div class="slide">
+<img src="https://drive.google.com/uc?export=view&id=1ee6ZkyJfJ30bN9CLaC6TwRGDQPvhsbHX" alt="Official IIC 4-Star Rating certificate issued to Francis Xavier Engineering College">
+</div>
+</div>
+<button class="prev" onclick="moveSlide(-1)" aria-label="Previous slide">&#8249;</button>
+<button class="next" onclick="moveSlide(1)" aria-label="Next slide">&#8250;</button>
+</div>
+<div class="dots">
+<span class="dot active" onclick="showSlide(0)"></span>
+<span class="dot" onclick="showSlide(1)"></span>
+</div>
+<div class="caption" id="caption">Recognition Creative</div>
 
 <div class="details">
 <div class="detail"><span>Recognition</span><strong>IIC 4-Star Rating</strong></div>
@@ -95,16 +109,28 @@ alt="Francis Xavier Engineering College sixth-time IIC 4-Star Rating national re
 <div class="detail"><span>Certificate No.</span><strong>1183</strong></div>
 <div class="detail"><span>Certificate Issued</span><strong>16 April 2026</strong></div>
 </div>
-
-<div class="actions">
-<a class="button" href="https://drive.google.com/file/d/1ee6ZkyJfJ30bN9CLaC6TwRGDQPvhsbHX/view?usp=sharing" target="_blank" rel="noopener">View Official Certificate</a>
-<a class="button secondary" href="https://drive.google.com/file/d/1VmAElGz3aa56KiLTDi4vmaByFhEiqnNN/view?usp=sharing" target="_blank" rel="noopener">View Recognition Creative</a>
-</div>
 </section>
 
 </div>
 </main>
 
 <footer><strong>FXEC TIMES</strong><br><br>Francis Xavier Engineering College<br><br>© 2026 FXEC Times. All Rights Reserved.</footer>
+
+<script>
+let current=0;
+const slides=document.getElementById('slides');
+const dots=document.querySelectorAll('.dot');
+const caption=document.getElementById('caption');
+const captions=['Recognition Creative','Official IIC 4-Star Rating Certificate'];
+
+function showSlide(index){
+current=(index+2)%2;
+slides.style.transform='translateX(-'+(current*100)+'%)';
+dots.forEach((dot,i)=>dot.classList.toggle('active',i===current));
+caption.textContent=captions[current];
+}
+function moveSlide(direction){showSlide(current+direction)}
+setInterval(()=>moveSlide(1),6000);
+</script>
 </body>
 </html>
